@@ -298,7 +298,7 @@ export class SeedConfig {
    * Set ENABLE_SCSS environment variable to 'true' or '1'
    * @type {boolean}
    */
-  ENABLE_SCSS = ['true', '1'].indexOf(`${process.env.ENABLE_SCSS}`.toLowerCase()) !== -1 || argv['scss'] || false;
+  ENABLE_SCSS = ['true', '1'].indexOf(`${process.env.ENABLE_SCSS}`.toLowerCase()) !== -1 || argv['scss'] || true;
 
   /**
    * Enable tslint emit error by setting env variable FORCE_TSLINT_EMIT_ERROR
@@ -378,6 +378,11 @@ export class SeedConfig {
       '@angular/platform-browser-dynamic/testing':
         'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/router/testing': 'node_modules/@angular/router/bundles/router-testing.umd.js',
+      '@ngrx/core': 'node_modules/@ngrx/core/bundles/core.umd.js',
+      '@ngrx/store': 'node_modules/@ngrx/store/bundles/store.umd.js',
+      '@ngrx/effects': 'node_modules/@ngrx/effects/bundles/effects.umd.js',
+      //'@ngrx/router-store': 'node_modules/@ngrx/router-store/bundles/router-store.umd.js',
+      '@ngrx/store-devtools': 'node_modules/@ngrx/store-devtools/bundles/store-devtools.umd.js',
 
       'app/*': '/app/*',
       // For test config
@@ -411,6 +416,11 @@ export class SeedConfig {
       // You will have to include entries for each individual application in
       // `src/client`.
       [join(this.TMP_DIR, this.BOOTSTRAP_DIR, '*')]: `${this.TMP_DIR}/${this.BOOTSTRAP_DIR}/*`,
+      '@ngrx/core': 'node_modules/@ngrx/core/bundles/core.umd.js',
+      '@ngrx/store': 'node_modules/@ngrx/store/bundles/store.umd.js',
+      '@ngrx/effects': 'node_modules/@ngrx/effects/bundles/effects.umd.js',
+      //'@ngrx/router-store': 'node_modules/@ngrx/router-store/bundles/router-store.umd.js',
+      '@ngrx/store-devtools': 'node_modules/@ngrx/store-devtools/bundles/store-devtools.umd.js',
       'dist/tmp/node_modules/*': 'dist/tmp/node_modules/*',
       'node_modules/*': 'node_modules/*',
       '*': 'node_modules/*'
